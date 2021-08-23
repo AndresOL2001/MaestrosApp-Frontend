@@ -1,0 +1,20 @@
+
+        <div class="card" style="width: 18rem; margin-top: 40px;margin-right:80px;" >
+            <div class="card-body">
+
+                <h5 class="card-title"  *ngIf="tipo==='maestro'">Maestro: {{maestro.nombre}}</h5>
+                <h5 *ngIf="tipo==='maestro'">Materia: {{maestro?.materia}}</h5>
+                <h6 *ngIf="tipo==='maestro'">Promedio:</h6>
+
+                <ngx-stars *ngIf="tipo==='maestro'" [readonly]="true" [color]="'#ffff00'" [maxStars]="5" [size]="1"
+                    [initialStars]="maestro.promedio / 2"></ngx-stars>
+                <button *ngIf="tipo==='maestro'" routerLink="/opiniones/{{maestro.maestro}}" class="btn btn-outline-primary "style="margin-right:4px;">Ver Opiniones</button>
+                <button *ngIf="tipo==='maestro'" routerLink="/opinion/{{maestro.maestro}}"class="btn btn-outline-success">Crear Opinion</button>
+
+                <h5 *ngIf="tipo==='opinion'"class="card-title" >Opinion: {{maestro.opinion}}</h5>
+
+                <ngx-stars *ngIf="tipo==='opinion'" [readonly]="true" [color]="'#ffff00'" [maxStars]="5" [size]="1"
+                [initialStars]="maestro.calificacion / 2"></ngx-stars>
+
+            </div>
+        </div>

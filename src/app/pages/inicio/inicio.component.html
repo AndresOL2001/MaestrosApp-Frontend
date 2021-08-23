@@ -1,0 +1,19 @@
+<div class="row" *ngIf="mejores.length===0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      <i class="fa fa-sync fa-spin"></i>
+      Porfavor espere..
+    </div>
+  </div>
+</div>
+
+<div class="row" *ngIf="mejores.length>0">
+  <div class="col-lg-6">
+    <app-tabla [title]="'Mejores Maestros'" [maestros]="mejores"></app-tabla>
+  </div>
+
+  
+  <div class="col-lg-6">
+    <app-tabla [title]="'Peores Maestros'" [maestros]="peores"></app-tabla>
+  </div>
+</div>

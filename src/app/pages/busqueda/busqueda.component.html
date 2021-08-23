@@ -1,0 +1,19 @@
+<h1>Buscando: <small>{{termino}}</small> <button (click)="volver()" class="btn btn-danger float-end"><i class="fas fa-long-arrow-alt-left"></i>
+
+    Volver</button> </h1>
+
+<hr>
+
+<div class="row" *ngIf="maestros.length===0 || !maestros">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen resultados con ese termino.
+        </div>
+    </div>
+
+</div>
+<div class="card-group">
+    <app-tarjeta [maestro]="maestro" [tipo]="'maestro'" *ngFor="let maestro of maestrosEncontrados;let i = index"></app-tarjeta>
+
+
+</div>

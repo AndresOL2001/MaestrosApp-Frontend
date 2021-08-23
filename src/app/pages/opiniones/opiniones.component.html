@@ -1,0 +1,29 @@
+<div class="row" *ngIf="opiniones.length===0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen resultados con ese termino.
+        </div>
+    </div>
+
+</div>
+<div *ngIf="maestro"> 
+
+    <h1 >Opiniones:{{maestro.nombre}}</h1>
+    <hr>
+    <h2 >Materia:{{maestro.materia}} 
+        <button (click)="volver()" class="btn btn-danger float-end"><i class="fas fa-long-arrow-alt-left"></i>
+
+            Volver</button> 
+    </h2>
+   
+
+</div>
+<div class="card-group">
+    <app-tarjeta [maestro]="opinion" [tipo]="'opinion'" *ngFor="let opinion of opiniones;let i = index"></app-tarjeta>
+
+
+</div>
+<button routerLink="/opinion/{{maestro?.uid}}" class="btn btn-success mt-3 mb-3"><i class="fas fa-plus"></i>
+
+    Crear Opinion 
+</button> 

@@ -1,0 +1,21 @@
+<div class="row" *ngIf="respuesta.length===0">
+  <div class="col-md-12">
+      <div class="alert alert-info" role="alert">
+          Sin opiniones que checar
+      </div>
+  </div>
+
+</div>
+
+<div class="card mx-auto" style="width: 18rem; margin-top: 100px;" *ngIf="load && respuesta.length!==0">
+    <div class="card-body">
+      <h5 class="card-title">{{respuesta[0]?.nombre}}</h5>
+      <h6>{{respuesta[0]?.materia}}</h6>
+
+      <p class="card-text">{{respuesta[0]?.opinion.opinion}}</p>
+      <ngx-stars [readonly]="true"[color]="'#ffff00'" [maxStars]="5" [size]="1" [initialStars]="this.respuesta[0].opinion.calificacion / 2" ></ngx-stars>
+      <a (click)="aceptar(respuesta[0]?.opinion._id)" class="btn btn-primary mx-3">Aceptar</a>
+      <a (click)="rechazar(respuesta[0]?.maestro,respuesta[0]?.opinion._id)"class="btn btn-danger ">Rechazar</a>
+
+    </div>
+   </div>

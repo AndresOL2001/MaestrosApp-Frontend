@@ -1,0 +1,128 @@
+
+<div class="alert alert-info" role="alert" id="nota">
+   <h5>  Nota:</h5> Favor de escribir una opinión de forma adecuada y preferiblemente basandose en el ejemplo , de lo contrario podria ser anulada
+</div>
+
+<div class="card-group">
+    <div class="card bg-light my-4 col-md-6" style="width: 18rem; margin-top: 40px;margin-right:30px;" >
+        <div class="card-header bg-primary text-white ">
+            <h4>
+                Crear Opinion
+                <button (click)="volver()" class="btn btn-primary float-end"><i class="fas fa-long-arrow-alt-left"></i>
+    
+                    Volver</button>
+            </h4>
+        </div>
+        <div class="card-body">
+
+
+                <div class="form-group row">
+                    <label class="col-sm-2 mb-2 col-form-label">Maestro: </label>
+                    <div class="col-sm-8">
+                        <input type="text"  disabled [value]="maestro?.nombre" class="form-control" required />
+    
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <label class="col-sm-2 mb-2 col-form-label">Materia: </label>
+                    <div class="col-sm-8">
+                        <input type="text"  disabled [value]="maestro?.materia" class="form-control" required />
+    
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Opinion:</label>
+                    <div class="col-sm-8">
+                        <textarea rows="6" [(ngModel)]="opinion" type="text"  class="form-control"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row " >
+                    <h5 class="col-sm-12  col-form-label " >Calificacion: 
+                    </h5>
+
+                        <ngx-stars (ratingOutput)="onRatingSet($event)" [readonly]="false" [color]="'#ffff00'" [maxStars]="5" [size]="2"
+                            [initialStars]="0"></ngx-stars>
+                    
+                        
+                </div>
+    
+    
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <button (click)="crearOpinion()" class="btn btn-primary mt-3">Crear Opinion</button>
+                    </div>
+                </div>
+    
+
+        </div>
+    </div>
+
+    <div class="card bg-light my-4 col-md-6" style="width: 18rem; margin-top: 40px;margin-right:30px;" >
+        <div class="card-header bg-primary text-white ">
+            <h4>
+                Formato Opinion (Ejemplo)
+                
+            </h4>
+        </div>
+        <div class="card-body">
+
+            <form>
+
+                <div class="form-group row">
+                    <label class="col-sm-2 mb-2 col-form-label">Maestro: </label>
+                    <div class="col-sm-9">
+                        <input type="text" name="descripcion" disabled value="Juan Perez" class="form-control" required />
+    
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <label class="col-sm-2 mb-2 col-form-label">Materia: </label>
+                    <div class="col-sm-9">
+                        <input type="text" name="descripcion" disabled value="Calculo Vectorial" class="form-control" required />
+    
+                    </div>
+                </div>
+    
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Opinion:</label>
+                    <div class="col-sm-9">
+                        <textarea rows="6" type="text" disabled name="observacion" class="form-control">
+Excelente maestro !! enseña muy bien a pesar de ser clases virtuales y es muy accesible en cuanto a faltas ademas fue justo con la calificación , en general muy buen maestro (Ingenieria en Sistemas Computacionales, 2021)
+                        </textarea>
+                    </div>
+                </div>
+
+                <div class="form-group row " >
+                    <h5 class="col-sm-12  col-form-label " >Calificacion: 
+                       La calificación se basa de 1-10 
+                    </h5>
+
+                        <ngx-stars  [readonly]="true" [color]="'#ffff00'" [maxStars]="5" [size]="2"
+                            [initialStars]="4.5"></ngx-stars>
+                    
+                </div>
+    
+    
+                <div class="form-group row">
+                    <div class="col-sm-6">
+                        <button class="btn btn-primary mt-3" disabled>Crear Opinion</button>
+                    </div>
+                </div>
+    
+            </form>
+
+
+           
+
+        </div>
+    </div>
+
+
+      
+
+</div>
+

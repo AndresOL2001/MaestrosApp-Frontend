@@ -1,0 +1,35 @@
+<h3>{{title}}</h3>
+<table class="table" border="1">
+  <thead>
+    <tr>
+  
+      <td>Nombre</td>
+  
+      <td>Materia</td>
+  
+      <td>Promedio</td>
+  
+      <td>Opiniones</td>
+  
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let maestro of maestros;let i=index">
+  
+      <td>{{maestro.nombre}}</td>
+  
+      <td> {{maestro.materia}}</td>
+  
+      <td> <ngx-stars [readonly]="true"[color]="'#ffff00'" [maxStars]="5" [size]="1" [initialStars]="maestro.promedio/2" ></ngx-stars>
+      </td>
+  
+      <td><button type="button" class="btn btn-outline-primary" data-bs-toggle="button" autocomplete="off" routerLink="/opiniones/{{maestro.maestro}}">Ver Opiniones</button></td>
+  
+      <tr>
+  </tbody>
+  
+   
+  
+  </table>
+  
